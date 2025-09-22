@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles with enhanced animations */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Enhanced animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply inline-flex items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl shadow-lg text-white;
+  background: linear-gradient(135deg, #475569 0%, #334155 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  @apply shadow-xl;
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center px-6 py-3 border-2 border-slate-300 text-sm font-semibold rounded-xl shadow-md text-slate-700 bg-white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  @apply border-slate-400 bg-slate-50 shadow-lg;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  @apply inline-flex items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl shadow-lg text-white;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-success:hover {
+  @apply shadow-xl;
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  @apply inline-flex items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl shadow-lg text-white;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-danger:hover {
+  @apply shadow-xl;
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  transform: translateY(-2px);
+}
+
+/* Enhanced card and form components */
+.card {
+  @apply bg-white/90 backdrop-blur-lg overflow-hidden shadow-xl rounded-2xl border border-slate-200/50;
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  @apply shadow-2xl border-slate-300/50;
+  transform: translateY(-4px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.candidate-card {
+  @apply bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl p-6 cursor-pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.candidate-card:hover {
+  @apply shadow-2xl border-slate-300/60 bg-white;
+  transform: translateY(-6px) scale(1.02);
+}
+
+.candidate-card.selected {
+  @apply border-emerald-400/80 bg-gradient-to-br from-emerald-50/80 to-slate-50/80 shadow-xl;
+  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
+}
+
+.skill-tag {
+  @apply inline-block bg-gradient-to-r from-slate-100 to-slate-200 text-slate-700 text-xs px-3 py-1.5 rounded-full mr-2 mb-2 font-medium border border-slate-200/50;
+  transition: all 0.2s ease-in-out;
+}
+
+.skill-tag:hover {
+  @apply from-slate-200 to-slate-300 shadow-md;
+  transform: scale(1.05);
+}
+
+.input-field {
+  @apply appearance-none block w-full px-4 py-3 border border-slate-300 rounded-xl placeholder-slate-400 bg-white/80 backdrop-blur-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-field:focus {
+  @apply shadow-lg bg-white;
+  transform: translateY(-1px);
+}
+
+.select-field {
+  @apply block w-full px-4 py-3 border border-slate-300 rounded-xl shadow-sm bg-white/80 backdrop-blur-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea-field {
+  @apply block w-full px-4 py-3 border border-slate-300 rounded-xl shadow-sm placeholder-slate-400 bg-white/80 backdrop-blur-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading animation */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Professional color palette */
+.bg-primary-500 { background-color: #64748b; }
+.bg-primary-600 { background-color: #475569; }
+.bg-primary-700 { background-color: #334155; }
+.text-primary-500 { color: #64748b; }
+.text-primary-600 { color: #475569; }
+.text-primary-700 { color: #334155; }
+.border-primary-500 { border-color: #64748b; }
+
+.bg-secondary-500 { background-color: #059669; }
+.bg-secondary-600 { background-color: #047857; }
+.text-secondary-500 { color: #059669; }
+.text-secondary-600 { color: #047857; }
+.border-secondary-500 { border-color: #059669; }
+
+.bg-secondary-500 { background-color: #3b82f6; }
+.bg-secondary-600 { background-color: #2563eb; }
+.text-secondary-500 { color: #3b82f6; }
+.text-secondary-600 { color: #2563eb; }
+.border-secondary-500 { border-color: #3b82f6; }
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.animate-bounce {
+  animation: bounce 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob1, .animate-blob2, .animate-blob3 {
+    animation: none !important;
+  }
+}

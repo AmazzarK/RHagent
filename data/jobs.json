@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Frontend React Developer",
+    "location": "Casablanca",
+    "skillsRequired": ["React", "JavaScript", "TypeScript", "CSS", "HTML"],
+    "jdSnippet": "We are looking for a talented Frontend Developer to join our dynamic team. You will be responsible for building user-facing web applications using React and modern JavaScript frameworks. The ideal candidate should have experience with component-based architecture, state management, and responsive design principles."
+  },
+  {
+    "title": "Full Stack Developer",
+    "location": "Rabat",
+    "skillsRequired": ["Node.js", "React", "PostgreSQL", "Docker", "AWS"],
+    "jdSnippet": "Join our engineering team as a Full Stack Developer! You'll work on both frontend and backend development, building scalable web applications. We're looking for someone comfortable with modern JavaScript frameworks, database design, and cloud deployment. Experience with containerization and CI/CD pipelines is a plus."
+  },
+  {
+    "title": "Backend Python Developer",
+    "location": "Casablanca",
+    "skillsRequired": ["Python", "Django", "PostgreSQL", "Docker", "Kubernetes"],
+    "jdSnippet": "We're seeking a skilled Backend Developer to design and implement robust server-side applications using Python and Django. You'll be working with microservices architecture, RESTful APIs, and cloud-native technologies. The role involves database optimization, performance tuning, and ensuring scalability of our platform."
+  }
+]
